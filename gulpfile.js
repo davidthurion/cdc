@@ -48,7 +48,7 @@ gulp.task("js", function() {
   //EXPLICATION DE LA TÂCHE JAVASCRIPT :
   return (
     gulp
-      .src("src/js/*.src.js") //Va me chercher, dans le dossier edit/js, tous les fichiers terminant par ".src.js",
+      .src("src/js/*.js") //Va me chercher, dans le dossier edit/js, tous les fichiers terminant par ".src.js",
       .pipe(
         plumber({
           errorHandler: function(err) {
@@ -59,17 +59,28 @@ gulp.task("js", function() {
           }
         })
       ) //dis-moi dans le terminal si ils contiennent des erreurs,
-      .pipe(
-        rename(function(path) {
-          //remplace, dans le nom du fichier, ".src" par ".min",
-          console.log('coucou');
-          path.basename = path.basename.replace(".src", ".min");
-        })
-      )
       .pipe(gulp.dest("dist/js/"))
       //et sauvegarde le tout dans le dossier src/js
 
       // .pipe(uglify())                                             //minifie le JS qui a ete genere,
+  );
+});
+
+//Tâche pour les fichiers img
+gulp.task("img", function() {
+  return (
+    gulp
+      .src("src/img/*")
+      .pipe(gulp.dest("dist/img/"))
+  );
+});
+
+//Tâche pour les fichiers font
+gulp.task("font", function() {
+  return (
+    gulp
+      .src("src/font/*")
+      .pipe(gulp.dest("dist/font/"))
   );
 });
 
@@ -97,14 +108,16 @@ gulp.task("browser-sync", function() {
 });
 
 //////// PHASE 005 > CES TÂCHES SE LANCENT LORSQUE UN FICHIER EST MODIFIE :
-gulp.task("watch", ["css", "browser-sync"], function() {
-  // gulp.watch('workFiles/imagecompressor.css', ['img']);             //si le fichier imagecompressor est modifié dans 'edit'      > lance la tâche 'img'
+gulp.task("watch", ["js", "img", "font", "css", "browser-sync"], function() {
   gulp.watch("src/css/sass/*.scss", ["css"]); //Si un fichier scss            est modifié dans 'edit/scss' > lance la tâche 'css'
   gulp.watch("src/css/sass/styles/base/*.scss", ["css"]); //Si un fichier scss            est modifié dans 'edit/scss' > lance la tâche 'css'
   gulp.watch("src/css/sass/styles/element/*.scss", ["css"]); //Si un fichier scss            est modifié dans 'edit/scss' > lance la tâche 'css'
   gulp.watch("src/css/sass/styles/page/*.scss", ["css"]); //Si un fichier scss            est modifié dans 'edit/scss' > lance la tâche 'css'
-  gulp.watch("src/js/*.src.js", ["js"]); //Si un fichier js              est modifié dans 'edit/js'   > lance la tâche 'js'
+  gulp.watch("src/js/*.js", ["js"]); //Si un fichier js              est modifié dans 'edit/js'   > lance la tâche 'js'
+  gulp.watch("src/img/*", ["img"]);
+  gulp.watch("src/font/*", ["font"]);
   gulp.watch("./*.html").on("change", browserSync.reload); //Si un fichier html            est modifié dans 'src'       > recharge completement la page
 });
+
 //////// PHASE 006 > LES TÂCHES QUI SE LANCENT PAR DEFAUT LORSQUE GULP SE LANCE :
 gulp.task("default", ["watch"]);
