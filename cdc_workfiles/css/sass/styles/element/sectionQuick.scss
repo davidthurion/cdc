@@ -1,0 +1,165 @@
+#sectionQuickInfo {
+	height: 350px;
+	background: url(../img/cdc_exterior.jpg) no-repeat center;
+	background-size: cover;
+	.wrapper {
+		height: 350px;
+		position: relative;
+		>span {
+			position: absolute;
+			cursor: pointer;
+			img {
+				width: 55px;
+			}
+		}
+		#infoChiffre {
+			top: 15%;
+			left: 10%;
+			&:after {
+				display: inline-block;
+				content: '';
+				width: 0;
+				height: 1px;
+				background: rgba(255,255,255,.8);
+				position: absolute;
+				left: 45px;
+				top: 24px;
+				@include transition(.1);
+			}
+			&.active:after {
+				width: 20px;
+			}
+		}
+		>div[data-quick="infoChiffre"] {
+			display: block;
+			top: calc(15% + 24px);
+			left: calc(10% + 65px);
+		}
+		#infoChat {
+			display: none;
+			top: 35%;
+			left: 50%;
+			@media screen and (min-width: 768px) {
+				display: block;
+			}
+			&:after {
+				display: inline-block;
+				content: '';
+				width: 0;
+				height: 1px;
+				background: rgba(255,255,255,.8);
+				position: absolute;
+				left: 45px;
+				top: 24px;
+				@include transition(.1);
+			}
+			&.active:after {
+				width: 20px;
+			}
+		}
+		>div[data-quick="infoChat"] {
+			display: none;
+			top: calc(35% + 24px);
+			left: calc(50% + 65px);
+		}
+		#infoSouris {
+			top: 25%;
+			right: 5%;
+			&:after {
+				display: inline-block;
+				content: '';
+				width: 0;
+				height: 1px;
+				background: rgba(255,255,255,.8);
+				position: absolute;
+				right: 45px;
+				top: 24px;
+				@include transition(.1);
+			}
+			&.active:after {
+				width: 20px;
+			}
+		}
+		>div[data-quick="infoSouris"] {
+			display: none;
+			top: calc(25% + 24px);
+			right: calc(5% + 65px);
+		}
+		>div {
+			background: white;
+			padding: 20px 20px 15px 20px;
+			position: absolute;
+			border-bottom: 5px solid $mainYellow;
+			z-index: 5;
+			.closeQuick {
+				display: block;
+				height: 20px;
+				width: 20px;
+				cursor: pointer;
+				position: absolute;
+				right: 18px;
+				top: 18px;
+				z-index: 666;
+				@media screen and (min-width: 1000px) {
+					right: 18px;
+					top: 18px;
+				}
+				span {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					display: block;
+					width: 20px;
+					height: 2px;
+					background: $mainYellow;
+					@include transition;
+				}
+				span:nth-child(1) {
+					transform: translate(-50%, -50%) rotate(45deg);
+				}
+				span:nth-child(2) {
+					transform: translate(-50%, -50%) rotate(-45deg);
+				}	
+			}
+			h4 {
+				font-family: 'Avenir LT Std 35 Black', Helvetica, sans-serif;
+				font-size: 16px;
+				color: $lightGrey;
+				letter-spacing: 1px;
+				text-transform: uppercase;
+				margin-bottom: 30px;
+				position: relative;
+				&:after {
+					display: block;
+					content: '';
+					width: 50px;
+					height: 2px;
+					background: $mainYellow;
+					position: absolute;
+					bottom: -10px;
+				}
+			}
+			table {
+				tr:last-child td {
+					height: 15px;
+				}
+				td {
+					height: 27px;
+					font-size: 14px;
+					font-family: 'Avenir LT Std 35 Light', Helvetica, sans-serif;
+					color: $mainGrey;
+					text-transform: uppercase;
+					sup {
+						text-transform: none;
+					}
+					&:last-child {
+						text-align: right;
+					}
+				}
+				a {
+					display: inline-block;
+				}
+			}
+		}   
+	}
+}

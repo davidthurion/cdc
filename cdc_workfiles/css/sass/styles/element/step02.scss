@@ -1,0 +1,52 @@
+.step02 {
+	display: none;
+	width: 100%;
+	font-size: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 4;
+	visibility: hidden;
+	@include transition;
+	@media screen and (min-width: 1000px) {
+		background: $bgGrey;
+	}
+	&.toStep02 {
+		display: block;
+		position: relative;
+		visibility: visible;
+	}
+	&.toStep03 {
+		position: absolute;
+		visibility: hidden;
+		left: -100%;
+	}
+	.step02Visual {
+		display: block;
+		content: '';
+		height: 250px;
+		@media screen and (min-width: 1000px) {
+			display: inline-block;
+			width: calc(50% - 200px);
+			vertical-align: top;
+		}
+	}
+	.step02Content {
+		background: $bgGrey;
+		padding: 60px 20px;
+		position: relative;
+		@media screen and (min-width: 1000px) {
+			display: inline-block;
+			width: 700px;
+			margin-right: calc(50% - 700px);
+			margin-left: 20px;
+		}
+	}
+}
+
+.step02 {
+	.step02Visual {
+		background: url(../img/cdc_mainVisualSquare.jpg) no-repeat center;
+		background-size: cover;
+	}
+}

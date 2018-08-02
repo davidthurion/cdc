@@ -1,0 +1,78 @@
+#sectionPhotos{
+	.swiper-container {
+		margin: 30px 0 0 0;
+		width: 100%;
+		height: 250px;
+		@include transition;
+		.swiper-slide {
+			height: 200px;
+			overflow: hidden;
+			@media screen and (min-width: 768px) {
+				&:hover {
+					&:before {
+						top: 5px;
+						bottom: 5px;
+						left: 5px;
+						right: 5px;
+					}
+					&:after {
+						opacity: 1;
+						background-size: 80%; 
+					}
+					img {
+						height: 230px;
+					}
+				}
+				&:before {
+					display: block;
+					content: '';
+					position: absolute;
+					top: -2px;
+					bottom: -2px;
+					left: -2px;
+					right: -2px;
+					border: 1px solid white;
+					z-index: 5;
+					@include transition;
+				}
+				&:after {
+					display: block;
+					content: "";
+					width: 25px;
+					height: 25px;
+					position: absolute;
+					left: 50%;
+					top: 50%;
+					opacity: 0;
+					transform: translate(-50%,-50%);
+					background: url(../img/cdc_icn_plus.svg) no-repeat center;
+					background-size: 0%; 
+					z-index: 5;
+					@include transition;
+				}				
+			}
+			img {
+				height: 200px;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+				@media screen and (min-width: 768px) {
+					@include transition;
+				}
+			}
+		}
+		.swiper-pagination {
+			bottom: 15px;
+			.swiper-pagination-bullet {
+				width: 12px;
+				height: 12px;
+				background-image: url(../img/cdc_icn_bullet.svg);
+			}
+			.swiper-pagination-bullet-active {
+				background: url(../img/cdc_icn_bullet.svg) $mainYellow;
+				// background: $mainYellow;
+			}
+		} 
+	}
+}

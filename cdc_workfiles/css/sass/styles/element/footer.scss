@@ -1,0 +1,167 @@
+footer {
+	background: $mainYellow;
+	padding: 60px 0 0 0;
+
+	.wrapper:first-child {
+		margin: 0;
+		@media screen and (min-width: 1000px) {
+			margin: 0 auto;
+		}
+		h2 {
+			color: white;
+		}
+		p+p {
+			text-align: left;
+			span {
+				display: inline-block;
+				margin: 0 5px;
+				color: white;
+				font-family: 'Avenir LT Std 35 Light';
+			}
+			a {
+				text-decoration: none;
+				color: $mainGrey;
+				@media screen and (min-width: 768px) {
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+	}
+	.formContainer {
+		font-size: 0;
+		@include transition;
+		>p {
+			position: relative;
+			// margin: 20px 0;
+			&+p {
+				margin: 30px 0 0 0;
+			}
+		}
+		.name,
+		.email,
+		.subject {
+			label {
+				font-size: 14px;
+				letter-spacing: 1px;
+				font-family: 'Avenir LT Std 45 Book';
+				color: white;
+				text-transform: uppercase;
+				position: absolute;
+				bottom: 5px;
+				@include transition(.2);
+				// &.active {
+				// 	bottom: 100%;
+				// }
+			}
+			input {
+				display: block;
+				background: none;
+				border: none;
+				border-bottom: 1px solid $mainGrey;
+				width: 100%;
+				padding: 10px;
+				outline: none;
+				&:focus ~ label,
+				&:valid ~ label {
+					bottom: 100%;
+				}
+			}
+		}
+		.name, .email {
+			@media screen and (min-width: 1000px) {
+				display: inline-block;
+				width: calc(50% - 20px);
+			}
+		}
+		.email {
+			@media screen and (min-width: 1000px) {
+				margin: 0 0 0 40px;
+			}
+		}
+		.message {
+			label {
+				font-size: 14px;
+				letter-spacing: 1px;
+				font-family: 'Avenir LT Std 45 Book';
+				color: white;
+				text-transform: uppercase;
+				position: absolute;
+				bottom: 5px;
+				@include transition;
+			}
+			textarea {
+				display: block;
+				background: none;
+				border: none;
+				border-bottom: 1px solid $mainGrey;
+				width: 100%;
+				padding: 10px;
+				height: 34px;
+				outline: none;
+				@include transition(.2);
+
+				&:focus ~ label,
+				&:valid ~ label {
+					bottom: 100%;
+				}
+			}
+		}	
+		.submit {
+			display: inline-block;
+			// font-size: 0;
+			@media screen and (min-width: 768px) {
+				position: relative;
+				&:after {
+					display: inline-block;
+					content: '';
+					width: 50px;
+					height: 50px;
+					background: url(../img/cdc_btn_arrow.svg) no-repeat center $lightGrey;
+					background-size: 20%;
+					position: absolute;
+					right: 50px;
+					bottom: 0;
+					opacity: 1;
+					@include transition(.3);
+				}
+				&:hover:after {
+					right: -50px;
+				}
+			}
+			input {
+				display: inline-block;
+				background: $mainGrey;
+				color: white;
+				padding: 0 30px;
+				height: 50px;
+				line-height: 45px;
+				border: none;
+				margin: 0;
+				font-size: 14px;
+				font-family: 'Avenir LT Std 45 Book';
+				text-transform: uppercase;
+				letter-spacing: 1px;
+				cursor: pointer;
+				position: relative;
+				z-index: 5;
+			}
+		}
+	}
+	>div:last-child {
+		background: $mainGrey;
+		color: white;
+		padding: 25px 0;
+		font-size: 14px;
+		text-align: center;
+		>a {
+			color: white;
+			@media screen and (min-width: 768px) {
+				&:hover {
+					color: $mainYellow;
+				}
+			}
+		}
+	}
+}

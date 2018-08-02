@@ -1,0 +1,31 @@
+#sectionProjet {
+	h1 {
+		font-family: 'Avenir LT Std 35 Light', Helvetica, sans-serif;
+		font-size: 26px;
+		line-height: 35px;
+		text-align: justify;
+		margin: 20px 0;
+		em {
+			font-family: 'Avenir LT Std 35 Black', Helvetica, sans-serif;
+		}
+	}
+	ul {
+		font-size: 0;
+		li {
+			display: inline-block;
+			width: 100%;
+			@media screen and (min-width: 600px) {
+				width: auto;	
+			}
+			&+li {
+				margin: 10px 0 0 0;
+				@media screen and (min-width: 600px) {
+					margin: 0 0 0 10px;
+				}
+			}
+			a {
+				font-size: 14px;
+			}
+		}
+	}
+}

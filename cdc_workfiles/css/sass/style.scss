@@ -1,0 +1,40 @@
+@import "styles/base/reset.scss";
+
+//  >>>  Usefull
+@import "styles/base/variables.scss";
+@import "styles/base/mixins.scss";
+@import "styles/base/avenir.scss";
+//  <<<  Usefull
+
+
+	
+//  >>>  Elements
+@import "styles/element/btnStyle.scss";
+@import "styles/element/simplelightbox.scss";
+@import "styles/element/topBar.scss";
+@import "styles/element/navigation.scss";
+@import "styles/element/sectionProjet.scss";
+@import "styles/element/sectionQuick.scss";
+@import "styles/element/sectionSituation.scss";
+@import "styles/element/sectionAppartement.scss";
+@import "styles/element/step01.scss";
+@import "styles/element/step02.scss";
+@import "styles/element/step03.scss";
+@import "styles/element/tableContainer.scss";
+@import "styles/element/sectionPhotos.scss";
+@import "styles/element/sectionMap.scss";
+@import "styles/element/footer.scss";
+//  <<<  Elements
+
+
+
+//  >>>  Pages
+@import "styles/page/homePage.scss";
+//  <<<  Pages
+
+
+
+
+
+
+

@@ -1,0 +1,16 @@
+@mixin transition($duree:.4, $effet:ease-in-out) {
+	transition: $duree+s all $effet;
+}
+
+@mixin objectCenter ($topValeur: 50%, $leftValeur: 50%, $xValeur: 50%, $yValeur:50%) {
+    position: absolute;
+    top: $topValeur;
+    left: $leftValeur;
+    transform: translate(-$xValeur,-$yValeur);
+}
+
+%clearFloat {
+	display: block;
+	content: '';
+	clear: both;
+}

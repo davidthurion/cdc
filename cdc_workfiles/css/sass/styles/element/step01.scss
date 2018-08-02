@@ -1,0 +1,74 @@
+#step01 {
+	display: block;
+	width: 100%;
+	font-size: 0;
+	position: relative;
+	left: 0;
+	z-index: 5;
+	visibility: visible;
+	@include transition;
+	@media screen and (min-width: 1000px) {
+		background: $bgGrey;
+	}
+	&.toStep02 {
+		position: absolute;
+		visibility: hidden;
+		left: -100%;
+	}
+	#introAppart {
+		background: $bgGrey;
+		padding: 60px 20px;
+		@media screen and (min-width: 1000px) {
+			display: inline-block;
+			width: 520px;
+			margin-left: calc(50% - 520px);
+			margin-right: 20px;
+		}
+		ul {
+			margin: 20px 0 0 0;
+			@media screen and (min-width: 768px) {
+				argin: 20px 0 0 40px;
+			}
+			li {
+				&+li {
+					margin: 10px 0 0 0;
+				}
+				a {
+					&:after {
+						display: inline-block;
+						content: '';
+						width: 13px;
+						height: 13px;
+						background: url(../img/cdc_btn_arrow.svg) no-repeat center $mainYellow;
+						background-size: 35%;
+						vertical-align: top;
+						margin: 0 0 0 10px;
+					}
+				}
+				&:last-child a:after {
+					display: inline-block;
+					content: '';
+					width: 13px;
+					height: 13px;
+					background: url(../img/cdc_btn_arrow.svg) no-repeat center $mainBlue;
+					background-size: 35%;
+					vertical-align: top;
+					margin: 0 0 0 10px;
+				}
+			}
+		}
+	}
+	#visualAppart {
+		display: block;
+		content: '';
+		height: 250px;
+		background: url(../img/cdc_mainVisualSquare.jpg) no-repeat center;
+		// background-attachment: fixed;
+		background-size: cover;	
+		@media screen and (min-width: 1000px) {
+			display: inline-block;
+			width: calc(50% - 20px);
+			vertical-align: top;
+		}
+	}
+}

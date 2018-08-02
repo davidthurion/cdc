@@ -1,0 +1,185 @@
+.step03 {
+	display: none;
+	width: 100%;
+	font-size: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 3;
+	visibility: hidden;
+	@include transition;
+	@media screen and (min-width: 1000px) {
+		background: $bgGrey;
+	}
+	&.toStep03 {
+		display: block;
+		position: relative;
+		visibility: visible;
+	}
+	.step03Visual {
+		display: block;
+		content: '';
+		height: 250px;
+		background: url(../img/cdc_mainVisualSquare.jpg) no-repeat center;
+		background-size: cover;
+		@media screen and (min-width: 1000px) {
+			display: inline-block;
+			width: calc(50% - 200px);
+			vertical-align: top;
+		}
+	}
+	.step03Content {
+		background: $bgGrey;
+		padding: 60px 20px;
+		position: relative;
+		font-size: 0;
+		@media screen and (min-width: 600px) {
+			&:after {
+				display: block;
+				content: '';
+				clear: both;
+			}
+		}
+		@media screen and (min-width: 1000px) {
+			display: inline-block;
+			width: 700px;
+			margin-right: calc(50% - 700px);
+			margin-left: 20px;
+		}
+		.intro {
+			font-size: 23px;
+			line-height: 30px;
+		}
+		>div {
+			margin: 40px 0 0 40px;
+			box-sizing: border-box;
+			h5 {
+				position: relative;
+				&:before {
+					display: inline-block;
+					content: '';
+					width: 25px;
+					height: 25px;
+					position: absolute;
+					left: -40px;
+					top: -8px;
+				}
+			}
+		}
+		.ficheTech {
+			display: inline-block;
+			h5 {
+				&:before {
+					background: url(../img/cdc_icn_tech.svg) no-repeat center;
+				}
+			}
+			td {
+				height: 30px;
+				font-size: 16px;
+				font-family: 'Avenir LT Std 35 Light', Helvetica, sans-serif;
+				color: $mainGrey;
+				text-transform: uppercase;
+				sup {
+					text-transform: none;
+				}
+				&:last-child {
+					text-align: right;
+				}
+			}
+		}
+		.linkAppart {
+			margin: 20px 0 0 0;
+			@media screen and (min-width: 600px) {
+				margin: 77px 0 0 0;
+				float: right;
+				width: 330px;
+				text-align: right;
+			}
+			a+a {
+				margin: 15px 0 0 0;
+			}
+		}
+		.photos {
+			h5 {
+				&:before {
+					background: url(../img/cdc_icn_tech.svg) no-repeat center;
+				}
+			}
+			>div {
+				font-size: 0;
+				a {
+					display: block;
+					width: 150px;
+					height: 150px;
+					overflow: hidden;
+					position: relative;
+					@media screen and (min-width: 768px) {
+						display: inline-block;
+						&:before {
+							display: block;
+							content: '';
+							position: absolute;
+							top: -2px;
+							bottom: -2px;
+							left: -2px;
+							right: -2px;
+							border: 1px solid white;
+							z-index: 5;
+							@include transition;
+						}
+						&:after {
+							display: block;
+							content: "";
+							width: 25px;
+							height: 25px;
+							position: absolute;
+							left: 50%;
+							top: 50%;
+							opacity: 0;
+							transform: translate(-50%,-50%);
+							background: url(../img/cdc_icn_plus.svg) no-repeat center;
+							background-size: 0%; 
+							z-index: 5;
+							@include transition;
+						}
+						&:hover {
+							&:before {
+								top: 5px;
+								bottom: 5px;
+								left: 5px;
+								right: 5px;
+							}
+							&:after {
+								opacity: 1;
+								background-size: 80%; 
+							}
+							img {
+								height: 170px;
+							}
+						}
+					}
+					&+a {
+						margin: 20px 0 0 0;
+						@media screen and (min-width: 768px) {
+							margin: 0 0 0 20px;
+						}
+					}
+					img {
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+						height: 100%;
+						@media screen and (min-width: 768px) {
+							@include transition;
+						}
+					}
+				}
+			}
+		}
+		>a:last-child {
+			margin: 30px 0 0 0; 
+		}
+	}
+	
+}

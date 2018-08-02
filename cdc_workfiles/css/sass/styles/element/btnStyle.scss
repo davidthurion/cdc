@@ -1,0 +1,68 @@
+.btnStyle {
+	display: block;
+	padding: 10px 0;
+	width: 100%;
+	border: 2px solid grey;
+	font-size: 14px;
+	font-family: 'Avenir LT Std 35 Black', Helvetica, sans-serif;
+	text-transform: uppercase;
+	text-decoration: none;
+	text-align: center;
+	@media screen and (min-width: 600px) {
+		padding: 10px 15px;
+		display: inline-block;
+		width: auto;
+	}
+}
+
+.btnYellow {
+	border-color: $mainYellow;
+	color: $mainYellow;
+	@media screen and (min-width: 768px) {
+		@include transition(.2);
+		&:hover {
+			background: $mainYellow;
+			color: white;
+		}
+	}
+}
+
+.btnBlue {
+	border-color: $mainBlue;
+	color: $mainBlue;
+	@media screen and (min-width: 768px) {
+		@include transition(.2);
+		&:hover {
+			background: $mainBlue;
+			color: white;
+		}
+	}
+}
+
+.btnSuper {
+	background: $lightGrey;
+	border: none;
+	color: white;
+	position: relative;
+	width: calc(100% - 34px);
+	&:after {
+		display: inline-block;
+		content: '';
+		height: 34px;
+		width: 34px;
+		background: url(../img/cdc_btn_arrow.svg) no-repeat center  $mainYellow;
+		background-size: 25%;
+		position: absolute;
+		right: -34px;
+		top: 0;
+	}
+	@media screen and (min-width: 768px) {
+		width: auto;
+	}
+	@media screen and (min-width: 768px) {
+		@include transition(.2);
+		&:hover {
+			background: $mainYellow;
+		}
+	}
+}

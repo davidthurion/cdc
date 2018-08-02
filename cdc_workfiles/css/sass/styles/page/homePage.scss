@@ -1,0 +1,117 @@
+* {
+	box-sizing: border-box;
+}
+
+*::selection {
+	background: $mainYellow;
+	color: $mainGrey;
+}
+
+body {
+	font-family: 'Avenir LT Std 35 Light', Helvetica, sans-serif;
+	color: $mainGrey;
+}
+
+.wrapper {
+	padding: 0 20px;
+	margin: 60px 0;
+	@media screen and (min-width: 1000px) {
+		padding: 0;
+		max-width: 1000px;
+		margin: 60px auto;
+	}
+}
+
+img {
+	display: block;
+}
+
+h2 {
+	font-family: 'Avenir LT Std 35 Black', Helvetica, sans-serif;
+	text-align: left;
+	color: $lightGrey;
+	text-transform: uppercase;
+	font-size: 16px;
+	letter-spacing: 1px;
+	small {
+		font-family: 'Avenir LT Std 35 Light', Helvetica, sans-serif;
+	}
+}
+
+h3 {
+	font-family: 'Avenir LT Std 35 Black', Helvetica, sans-serif;
+	text-align: left;
+	color: $lightGrey;
+	text-transform: uppercase;
+	font-size: 14px;
+	letter-spacing: 1px;
+}
+
+h5 {
+	font-family: 'Avenir LT Std 35 Black', Helvetica, sans-serif;
+	font-size: 14px;
+	color: $lightGrey;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+}
+
+
+sup {
+	vertical-align: super;
+	font-size: smaller; 
+}
+
+.intro {
+	font-family: 'Avenir LT Std 35 Light', Helvetica, sans-serif;
+	font-size: 26px;
+	line-height: 35px;
+	text-align: justify;
+	margin: 20px 0 0 0;
+	em {
+		font-family: 'Avenir LT Std 35 Black', Helvetica, sans-serif;
+	}
+}
+
+#mainVisual {
+	margin: 90px 0 0 0;
+	height: 200px;
+	background: url(../img/cdc_mainVisualSquare.jpg) no-repeat center;
+	background-attachment: fixed;
+	background-size: length;
+	text-align: center;
+	@media screen and (min-width: 768px) {
+		margin: 110px 0 0 0;
+		height: 300px;
+		background: url(../img/cdc_mainVisual.jpg) no-repeat center;
+		background-size: 100%;
+	}
+	@media screen and (min-width: 1000px) {
+		height: 470px;
+	}
+	a {
+		display: inline-block;
+		position: relative;
+		// transform: tranlasteX(150%);
+		@media screen and (min-width: 768px) {
+			margin: 30px 0 0 100px;
+ 		}
+ 		@media screen and (min-width: 1000px) {
+ 			margin: 90px 0 0 500px;
+ 		}
+		img {
+			height: 200px;
+			@media screen and (min-width: 768px) {
+				height: 220px;
+			}
+			@media screen and (min-width: 1000px) {
+				height: 300px;
+			}
+		}
+	} 
+}
+
+.hidden {
+	transform: translateY(50px);
+	opacity: 0;
+}

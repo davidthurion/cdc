@@ -1,0 +1,301 @@
+#sectionInformation{
+	border-bottom: 2px solid $mainYellow;
+	font-size: 0;
+	>figure {
+		display: block;
+		width: 100%;
+		height: 200px;
+		background: url(../img/cdc_mainVisual.jpg) no-repeat center;
+		background-attachment: fixed;
+		background-size: cover;
+		@media screen and (min-width: 1000px) {
+			display: inline-block;
+			width: 30%;
+			vertical-align: top;
+		}
+		@media screen and (min-width: 1200px) {
+			width: 40%;
+		}
+		@media screen and (min-width: 1400px) {
+			width: 50%;
+		} 
+	}
+	#contentDiv {
+		@media screen and (min-width: 1000px) {
+			display: inline-block;
+			width: 70%;
+			vertical-align: top;
+		}
+		@media screen and (min-width: 1200px) {
+			width: 60%;
+		}
+		@media screen and (min-width: 1400px) {
+			width: 50%;
+		}
+		>#tableContainer {
+			display: block;
+			padding: 20px;
+			@media screen and (min-width: 1000px) {
+				padding: 40px 20px 40px 40px;
+			}
+			@media screen and (min-width: 1400px) {
+				padding: 60px; 
+			} 
+			#myTable {
+				width: 100%;
+				text-align: left;
+				@media screen and (min-width: 1000px) {
+					max-width: 800px;
+				}
+				thead {
+					background: $mainYellow;
+					th {
+						padding: 10px;
+						background-image: url(../img/bg.png);
+						background-repeat: no-repeat;
+						background-position: right 5px center;
+						font-family: 'Avenir LT Std 35 Black', Helvetica, sans-serif;
+						text-transform: uppercase;
+						color: white;
+						font-size: 14px;
+						cursor: pointer;
+						&:first-child {
+							background-image: none;
+							padding: 10px 0 10px 10px;
+							width: 34px;
+						}
+						&:nth-child(5) {
+							display: none;
+							@media screen and (min-width: 768px) {
+								display: table-cell;
+							}
+						}
+					}
+				}
+				th.headerSortUp {
+					background-image: url(../img/asc.png);
+					background-color: $mainYellow;
+					color: $mainGrey;
+				}
+				th.headerSortDown {
+					background-image: url(../img/desc.png);
+					background-color: $mainYellow;
+					color: $mainGrey;
+				}
+				tbody {
+					tr {
+						&:nth-child(even) td {
+							background: $bgGrey;
+						}
+						td {
+							padding: 10px;
+							font-size: 16px;
+							cursor: pointer;
+							&:first-child {
+								padding: 0 0 0 10px;
+								img {
+									display: inline-block;
+									vertical-align: middle;
+								}
+							}
+							&:nth-child(5) {
+								display: none;
+								@media screen and (min-width: 768px) {
+									display: table-cell;
+								}
+							}
+						}
+						@media screen and (min-width: 768px) {
+							&:hover td {
+								background: darken($bgGrey, 5%);
+							}
+						}
+					}
+				}
+			}
+		}
+		#infoContainer {
+			display: none;
+			padding: 20px;
+			position: relative;
+			@media screen and (min-width: 1000px) {
+				padding: 60px;
+				max-width: 800px; 
+			}
+			#closeInfo {
+				display: block;
+				height: 30px;
+				width: 30px;
+				cursor: pointer;
+				position: absolute;
+				right: 20px;
+				top: 20px;
+				z-index: 333;
+				@media screen and (min-width: 1000px) {
+					right: 60px;
+					top: 60px;
+				}
+				span {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					display: block;
+					width: 30px;
+					height: 2px;
+					background: $mainYellow;
+					@include transition;
+				}
+				span:nth-child(1) {
+					transform: translate(-50%, -50%) rotate(45deg);
+				}
+				span:nth-child(2) {
+					transform: translate(-50%, -50%) rotate(-45deg);
+				}	
+			}
+			h4 {
+				font-family: 'Avenir LT Std 35 Black', Helvetica, sans-serif;
+				font-size: 16px;
+				color: $lightGrey;
+				letter-spacing: 1px;
+				text-transform: uppercase;
+				margin-bottom: 30px;
+				position: relative;
+				&:after {
+					display: block;
+					content: '';
+					width: 50px;
+					height: 2px;
+					background: $mainYellow;
+					position: absolute;
+					bottom: -10px;
+				}
+				small {
+					font-family: 'Avenir LT Std 35 Light', Helvetica, sans-serif;
+				}
+			}
+			.intro {
+				font-size: 23px;
+				line-height: 30px;
+			}
+			>div {
+				margin: 40px 0 0 40px;
+				h5 {
+					position: relative;
+					&:before {
+						display: inline-block;
+						content: '';
+						width: 25px;
+						height: 25px;
+						position: absolute;
+						left: -40px;
+						top: -8px;
+					}
+				}
+			}
+			.ficheTech {
+				h5 {
+					&:before {
+						background: url(../img/cdc_icn_tech.svg) no-repeat center;
+					}
+				}
+				td {
+					height: 30px;
+					font-size: 16px;
+					font-family: 'Avenir LT Std 35 Light', Helvetica, sans-serif;
+					color: $mainGrey;
+					text-transform: uppercase;
+					sup {
+						text-transform: none;
+					}
+					&:last-child {
+						text-align: right;
+					}
+				}
+				a {
+					display: inline-block;
+				}
+			}
+			.photos {
+				h5 {
+					&:before {
+						background: url(../img/cdc_icn_tech.svg) no-repeat center;
+					}
+				}
+				>div {
+					font-size: 0;
+					a {
+						display: block;
+						width: 150px;
+						height: 150px;
+						overflow: hidden;
+						position: relative;
+						@media screen and (min-width: 768px) {
+							display: inline-block;
+							&:before {
+								display: block;
+								content: '';
+								position: absolute;
+								top: -2px;
+								bottom: -2px;
+								left: -2px;
+								right: -2px;
+								border: 1px solid white;
+								z-index: 5;
+								@include transition;
+							}
+							&:after {
+								display: block;
+								content: "";
+								width: 25px;
+								height: 25px;
+								position: absolute;
+								left: 50%;
+								top: 50%;
+								opacity: 0;
+								transform: translate(-50%,-50%);
+								background: url(../img/cdc_icn_plus.svg) no-repeat center;
+								background-size: 0%; 
+								z-index: 5;
+								@include transition;
+							}
+							&:hover {
+								&:before {
+									top: 5px;
+									bottom: 5px;
+									left: 5px;
+									right: 5px;
+								}
+								&:after {
+									opacity: 1;
+									background-size: 80%; 
+								}
+								img {
+									height: 170px;
+								}
+							}
+						}
+						&+a {
+							margin: 20px 0 0 0;
+							@media screen and (min-width: 768px) {
+								margin: 0 0 0 20px;
+							}
+						}
+						img {
+							position: absolute;
+							top: 50%;
+							left: 50%;
+							transform: translate(-50%, -50%);
+							height: 100%;
+							@media screen and (min-width: 768px) {
+								@include transition;
+							}
+						}
+					}
+				}
+			}
+			>a:last-child {
+				margin: 30px 0 0 0; 
+			} 
+		}
+	}	
+}

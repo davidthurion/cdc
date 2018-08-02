@@ -1,0 +1,73 @@
+.tableContainer {
+			display: block;
+			margin: 40px 0 0 0;
+			.myTable {
+				width: 100%;
+				text-align: left;
+				thead {
+					background: $mainYellow;
+					th {
+						padding: 10px;
+						background-image: url(../img/bg.png);
+						background-repeat: no-repeat;
+						background-position: right 5px center;
+						font-family: 'Avenir LT Std 35 Black', Helvetica, sans-serif;
+						text-transform: uppercase;
+						color: white;
+						font-size: 14px;
+						cursor: pointer;
+						&:first-child {
+							background-image: none;
+							padding: 10px 0 10px 10px;
+							width: 34px;
+						}
+						&:nth-child(5) {
+							display: none;
+							@media screen and (min-width: 768px) {
+								display: table-cell;
+							}
+						}
+					}
+				}
+				th.headerSortUp {
+					background-image: url(../img/asc.png);
+					background-color: $mainYellow;
+					color: $mainGrey;
+				}
+				th.headerSortDown {
+					background-image: url(../img/desc.png);
+					background-color: $mainYellow;
+					color: $mainGrey;
+				}
+				tbody {
+					tr {
+						&:nth-child(even) td {
+							background: $bgGrey;
+						}
+						td {
+							padding: 10px;
+							font-size: 16px;
+							cursor: pointer;
+							&:first-child {
+								padding: 0 0 0 10px;
+								img {
+									display: inline-block;
+									vertical-align: middle;
+								}
+							}
+							&:nth-child(5) {
+								display: none;
+								@media screen and (min-width: 768px) {
+									display: table-cell;
+								}
+							}
+						}
+						@media screen and (min-width: 768px) {
+							&:hover td {
+								background: darken($bgGrey, 5%);
+							}
+						}
+					}
+				}
+			}
+		}
