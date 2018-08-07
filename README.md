@@ -1,6 +1,6 @@
 # Presentation #
 
-Mai 2016 
+Mai 2016
 CDC - Website design and front-end
 
 Design for a website made with bonjourinternet.com and integration started by me 
